@@ -37,3 +37,44 @@ span {
   position: absolute;
   border-radius: 100vmax;
 }
+.wrapper{
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.wrapper .text-input{
+  display: flex;
+  border-bottom: 1px solid #fff;
+}
+.text-input .to-text{
+  border-radius: 0px;
+  border-left: 1px solid #fff;
+}
+.text-input textarea{
+  height: 250px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: white;
+}
+.text-input textarea::placeholder{
+  color: white;
+}
+.controls, li, .icons, .icons i{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls{
+  list-style: none;
+  padding: 12px 15px;
+}
+
+.controls .row .icons{
+  width: 38%;
+}
