@@ -32,7 +32,6 @@ body{
   align-items: center;
   padding: 1em;
 }
-
 span {
   position: absolute;
   border-radius: 100vmax;
@@ -69,12 +68,10 @@ span {
   align-items: center;
   justify-content: space-between;
 }
-
 .controls{
   list-style: none;
   padding: 12px 15px;
 }
-
 .controls .row .icons{
   width: 38%;
 }
@@ -106,7 +103,6 @@ border-radius: 5px;
 margin-right: 25px;
 margin-left: 25px;
 height: 40px;
-
 }
 .text-input textarea::-webkit-scrollbar{
   width: 4px;
