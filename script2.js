@@ -16,3 +16,18 @@ icons = document.querySelectorAll(".row i");
 // Selecting the DOM button element
 translateBtn = document.querySelector("button");
 
+// Looping through each select element in the NodeList
+selectTag.forEach((tag, id) => {
+    // Looping through each country code in the 'countries' object
+    for (let country_code in countries) {
+        // Checking if it's the first select element (English) and setting "selected" accordingly
+        let selected = id == 0 ? (country_code == "en-GB" ? "selected" : "") : 
+                        (country_code == "hi-IN" ? "selected" : "");
+                        
+        // Creating an HTML option element with the appropriate attributes and values
+        let option = `<option ${selected} value="${country_code}">${countries[country_code]}</option>`;
+        
+        // Adding the option to the current select element
+        tag.insertAdjacentHTML("beforeend", option);
+    }
+});
