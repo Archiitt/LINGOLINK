@@ -39,3 +39,15 @@ exchageIcon.addEventListener("click", () => {
 
     fromText.value = toText.value;
     toText.value = tempText;
+    // Swapping the language selections between the two select elements
+    selectTag[0].value = selectTag[1].value;
+    selectTag[1].value = tempLang;
+});
+
+// Adding an event listener to the 'fromText' input for a keyup event
+fromText.addEventListener("keyup", () => {
+    // If 'fromText' is empty, clear the 'toText'
+    if (!fromText.value) {
+        toText.value = "";
+    }
+});
