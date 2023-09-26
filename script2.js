@@ -84,3 +84,8 @@ translateBtn.addEventListener("click", () => {
             toText.setAttribute("placeholder", "Translation");
         });
 });
+// Adding click event listeners to all icons in the NodeList
+icons.forEach(icon => {
+    icon.addEventListener("click", ({ target }) => {
+        // Check if 'fromText' or 'toText' is empty, and if so, return early
+        if (!fromText.value || !toText.value) return;
