@@ -31,3 +31,11 @@ selectTag.forEach((tag, id) => {
         tag.insertAdjacentHTML("beforeend", option);
     }
 });
+// Adding an event listener to the exchange icon for a click event
+exchageIcon.addEventListener("click", () => {
+    // Swapping the text and language values between 'fromText' and 'toText'
+    let tempText = fromText.value,
+        tempLang = selectTag[0].value;
+
+    fromText.value = toText.value;
+    toText.value = tempText;
