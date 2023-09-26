@@ -89,3 +89,13 @@ icons.forEach(icon => {
     icon.addEventListener("click", ({ target }) => {
         // Check if 'fromText' or 'toText' is empty, and if so, return early
         if (!fromText.value || !toText.value) return;
+// Check if the clicked icon has the class "fa-copy"
+        if (target.classList.contains("fa-copy")) {
+            // If it's the "Copy" icon, copy the corresponding text to the clipboard
+            if (target.id == "from") {
+                navigator.clipboard.writeText(fromText.value);
+            } else {
+                navigator.clipboard.writeText(toText.value);
+            }
+        } else {
+            // If it's not the "Copy
