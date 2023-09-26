@@ -63,3 +63,24 @@ translateBtn.addEventListener("click", () => {
 
     // Setting a placeholder text while translating
     toText.setAttribute("placeholder", "Translating...");
+    // Constructing the API URL for translation
+    let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
+
+    // Fetching the translation from the API
+    fetch(apiUrl)
+        .then(res => res.json())
+        .then(data => {
+            // Updating the 'toText' input with the translated text
+            toText.value = data.responseData.translatedText;
+
+            // Looping through matches to check if a more accurate translation is available
+            data.matches.forEach(data => {
+                if (data.id === 0) {
+                    toText.value = data.translation;
+                }
+            });
+
+            // Setting back the placeholder to indicate translation completion
+            toText.setAttribute("placeholder", "Translation");
+        });
+});
