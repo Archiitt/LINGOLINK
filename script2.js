@@ -51,3 +51,15 @@ fromText.addEventListener("keyup", () => {
         toText.value = "";
     }
 });
+// Adding an event listener to the translate button for a click event
+translateBtn.addEventListener("click", () => {
+    // Extracting the text to be translated and the chosen languages
+    let text = fromText.value.trim(),
+        translateFrom = selectTag[0].value,
+        translateTo = selectTag[1].value;
+
+    // If there's no text to translate, return early
+    if (!text) return;
+
+    // Setting a placeholder text while translating
+    toText.setAttribute("placeholder", "Translating...");
